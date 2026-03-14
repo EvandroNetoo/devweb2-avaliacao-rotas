@@ -1,0 +1,47 @@
+<section class="space-y-8">
+    <div class="hero rounded-box border border-base-300 bg-base-200/70 shadow-lg">
+        <div class="hero-content w-full justify-between gap-6 px-6 py-8 max-lg:flex-col max-lg:items-start lg:px-10">
+            <div class="space-y-3">
+                <span class="badge badge-secondary badge-outline">Catálogo</span>
+                <h1 class="text-4xl font-black tracking-tight">Produtos</h1>
+                <p class="max-w-2xl text-base leading-7 text-base-content/75">
+                    Visualize todos os produtos cadastrados.
+                </p>
+            </div>
+
+            <div class="stats stats-vertical border border-base-300 bg-base-100 shadow mx-auto lg:mx-0">
+                <div class="stat text-center">
+                    <div class="stat-title">Produtos listados</div>
+                    <div class="stat-value text-primary">{{ totalProdutos }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100 shadow-lg overscroll-x-none">
+        <table class="table table-zebra">
+            <thead>
+                <tr>
+                    <th class="w-0 text-right">#</th>
+                    <th>Produto</th>
+                    <th class="text-center whitespace-nowrap">QTD palavras</th>
+                    <th class="text-center whitespace-nowrap">Tempo de leitura</th>
+                    <th class="w-0">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (produto of produtos; track produto.id) {
+                <tr>
+                    <td class="text-right font-semibold">{{ produto.id }}</td>
+                    <td class="font-medium capitalize">{{ produto.nome }}</td>
+                    <td class="text-center whitespace-nowrap">{{ produto.palavras }}</td>
+                    <td class="text-center whitespace-nowrap">{{ produto.tempoLeitura }} min</td>
+                    <td>
+                        <a class="btn btn-ghost btn-xs" [routerLink]="['/produtos', produto.id]">Ver</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

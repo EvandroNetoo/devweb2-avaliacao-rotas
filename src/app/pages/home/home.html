@@ -1,0 +1,29 @@
+<section class="hero rounded-box border border-base-300 bg-base-200/60 py-16 sm:py-20">
+    <div class="hero-content w-full max-w-4xl text-center">
+        <div class="space-y-6">
+            <span class="badge badge-primary badge-outline">Desenvolvimento Web II</span>
+            <h1 class="text-4xl font-black leading-tight sm:text-5xl">
+                Projeto de rotas com Angular
+            </h1>
+            <p class="mx-auto max-w-3xl text-base leading-8 text-base-content/75 sm:text-lg">
+                Esta aplicação foi construída para praticar navegação com Angular Router,
+                incluindo redirecionamento, rotas filhas e rota parametrizada para detalhes de produto.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                @for (topico of topicos; track topico) {
+                <span class="badge badge-outline badge-lg">{{ topico }}</span>
+                }
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a routerLink="/produtos" class="btn btn-primary">
+                    Ir para produtos
+                </a>
+                <a routerLink="/produtos/1" class="btn btn-outline">
+                    Abrir exemplo de detalhe
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

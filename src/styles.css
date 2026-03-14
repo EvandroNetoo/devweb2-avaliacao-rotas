@@ -1,3 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'tailwindcss';
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "ifes";
+    default: true;
+    prefersdark: true;
+    color-scheme: "dark";
+    --color-base-100: oklch(28% 0.066 53.813);
+    --color-base-200: oklch(42% 0.095 57.708);
+    --color-base-300: oklch(47% 0.114 61.907);
+    --color-base-content: oklch(97% 0.071 103.193);
+    --color-primary: oklch(87% 0.169 91.605);
+    --color-primary-content: oklch(27% 0.077 45.635);
+    --color-secondary: oklch(86% 0.127 207.078);
+    --color-secondary-content: oklch(30% 0.056 229.695);
+    --color-accent: oklch(89% 0.196 126.665);
+    --color-accent-content: oklch(27% 0.072 132.109);
+    --color-neutral: oklch(55% 0.135 66.442);
+    --color-neutral-content: oklch(98% 0.026 102.212);
+    --color-info: oklch(54% 0.245 262.881);
+    --color-info-content: oklch(97% 0.014 254.604);
+    --color-success: oklch(64% 0.2 131.684);
+    --color-success-content: oklch(98% 0.031 120.757);
+    --color-warning: oklch(68% 0.162 75.834);
+    --color-warning-content: oklch(98% 0.026 102.212);
+    --color-error: oklch(57% 0.245 27.325);
+    --color-error-content: oklch(97% 0.013 17.38);
+    --radius-selector: 0rem;
+    --radius-field: 0rem;
+    --radius-box: 0rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 1;
+}
+
+
+html,
+body {
+    /* Impede o efeito de "bounce" e também o gesto de "puxar para atualizar" no mobile */
+    overscroll-behavior-y: none;
+    scroll-behavior: smooth;
+}
